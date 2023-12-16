@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="css/styles.css">
+
+<h1>Encoder les données de la pièce</h1>
+
+<form action="/add" method="POST">
+  Pièce:
+  <input type="text" name="piece" value=""><br/>
+  Largeur :
+  <input type="number" name="length" min="0" value=""><br/>
+  Longueur :
+  <input type="number" name="width" min="0" value=""><br/>
+
+  <input type="submit" name="Sauvegarder" value="Enregistrer">
+</form>
+
+<h2>Liste des pièces de l'appartement</h2>
+<ul>
+  <% for(TableAppart of List) { %>
+    <li><%= TableAppart.piece %> - Longueur:<%= TableAppart.length %>m - Largeur: <%= TableAppart.width %>m</li>
+  <% } %>
+</ul>
+
+
+<form action="/calcul" method="POST">
+  <input type="submit" name ="area" value="Calculer la surface">
+</form>
+
+<div class="total-line">
+  Aire totale: <%= totalarea %> 
+</div>
+
